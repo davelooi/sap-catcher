@@ -1,0 +1,2 @@
+class Sap < ApplicationRecord
+end

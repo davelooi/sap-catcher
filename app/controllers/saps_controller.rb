@@ -2,6 +2,8 @@ class SapsController < ApplicationController
   before_action :set_sap, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
 
+  http_basic_authenticate_with name: ENV.fetch('BASIC_USERNAME'), password: ENV.fetch('BASIC_PASSWORD')
+
   # GET /saps
   # GET /saps.json
   def index
